@@ -26,7 +26,7 @@ public class Routes extends RouteBuilder {
     rest("/fruits")
         .get("/").to(DIRECTGET)
         .post().type(Fruit.class).to(DIRECTPOST);
-        
+
     from(DIRECTGET).setBody(e -> fruits);
     from(DIRECTPOST).process().body(Fruit.class, (Fruit f) -> fruits.add(f));
 
