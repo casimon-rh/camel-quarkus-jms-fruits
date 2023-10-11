@@ -100,3 +100,17 @@ fruits.port=80
 # "dev"
 %dev.fruits.port=8080
 ```
+
+### Factor XI. Logs
+
+> The application is configured to yield logs on stdin and stdout (as streams and not files), it also has specific log configuration defining formats.
+
+```properties
+camel.component.log.exchange-formatter = #class:org.apache.camel.support.processor.DefaultExchangeFormatter
+camel.component.log.exchange-formatter.show-exchange-pattern = false
+camel.component.log.exchange-formatter.show-body-type = false
+```
+
+### Factor XII. Admin processes
+
+> The application's admin processes are handled by maven and run separately but still in the same environment.
